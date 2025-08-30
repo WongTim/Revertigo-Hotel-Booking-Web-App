@@ -1,0 +1,182 @@
+<html>
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 33.33%;
+  padding: 1px;
+}
+
+
+body {
+	font-family: 'Times New Roman', serif;
+	background-image: url('/static/revertigo_wallpaper.jpg');
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;	
+	font-size: 20px;
+}
+
+
+h2 {
+	color:white;
+}
+
+h2:hover {
+	color: black;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 60px 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #C7BBBB;
+  cursor: pointer;
+}
+
+li {
+  float: left;
+}
+
+li.b {
+  float: right;
+}
+	
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 30px 40px;
+  transition: all 1s ease;
+  text-decoration: none;
+
+}
+
+li a:hover {
+    color:white;
+    transition: all 1s ease;
+}
+
+
+
+
+
+.container {
+	border-radius: 5px;
+	border: 3px solid grey;
+    background-color: white;
+    padding: 10px 50px 50px;
+	width: 60%;
+}
+
+
+
+input[type=text], input[type=password] {
+	width: 300px;
+	height: 35px;
+	border: 2px solid #9670d4;
+	font-size: 18px;
+}
+
+
+
+
+input[type=submit] {
+	width: 200px;
+	height: 50px;
+	border-color: black;
+	background-color: Green;
+	font-family: 'Times New Roman', serif;
+	font-size: 20px;
+	margin-right: 40px;
+}
+
+
+
+input[type=submit]:hover {
+	background-color: white;
+	
+}
+
+
+
+table {
+  border-collapse: collapse;
+  width: 60%;
+  background-color: grey;
+}
+
+td, th {
+  border: 1px solid #2f77eb;
+  text-align: left;
+  padding: 8px;
+}
+
+tr {background-color:white;}
+
+tr:nth-of-type(1) { 
+    background-color: #2f77eb;
+ }
+
+
+
+
+
+
+</style>
+</head>
+
+
+
+<body>
+
+
+<ul>
+  <li class="a"><a href="javascript:history.back()">← Back</a></li>
+  <li class="b"><a href="{{url_for('home')}}">Logout</a></li>
+</ul>
+
+
+
+<center><table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>HP</th>
+	<th>Email</th>
+  </tr>
+  
+{% for customer in customers %}
+  <tr>
+    <td>{{customer[0]}}</td>
+    <td>{{customer[1]}}</td>
+    <td>{{customer[2]}}</td>
+	<td>{{customer[3]}}</td>
+  </tr>
+{% endfor %}
+</table></center>
+
+
+
+
+
+
+
+
+
+
+
+</body>

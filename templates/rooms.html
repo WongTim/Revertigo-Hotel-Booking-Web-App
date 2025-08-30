@@ -1,0 +1,186 @@
+<html>
+<style>
+
+
+body {
+	font-family: 'Times New Roman', serif;
+	background-image: url('/static/lobby-orchard-hotel-singapore.webp');
+	background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;	
+	font-size: 20px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Black overlay with 40% opacity */
+    z-index: -1;
+}
+
+
+h1 {
+    color: silver;
+}
+
+
+h2 {
+	color:white;
+}
+
+h2:hover {
+	color: black;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 60px 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #7d5632;
+  cursor: pointer;
+}
+
+li {
+  float: left;
+}
+
+li.b {
+  float: right;
+}
+	
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 30px 40px;
+  transition: all 1s ease;
+  text-decoration: none;
+
+}
+
+li a:hover {
+    color:white;
+    transition: all 1s ease;
+}
+
+
+img {
+	width: 100%;
+}
+
+
+.head {
+	padding: 30px;
+	display: block;
+	margin: 0;
+	border: 10px solid #C7BBBB;
+}
+
+
+
+.container {
+	padding: 100px 100px;
+	display: block;
+	margin: 0;
+	overflow: hidden;
+}
+
+
+img {
+	width: 600px;
+	max-height: 400px;
+	float: left;
+	margin-right: 50px;
+}
+
+
+
+button {
+	padding: 25px 30px;
+	font-family: 'Times New Roman', serif;
+	font-size: 20px;
+	border-radius:8px;
+	color: black;
+	border-color: #9670d4;
+}
+
+
+button:hover {
+	background-color: #9670d4;
+	color: white;
+}
+
+
+a {
+	text-decoration: none;
+}
+
+hr {
+  height:5px;
+  background-color:#C7BBBB;
+}
+
+p {
+  color: silver;
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+
+<ul>
+  <li><a href="{{url_for('home')}}">Home</a></li>
+  <li><a href="{{url_for('rooms')}}">Rooms</a></li>
+  <li class="b"><a href="{{url_for('contact')}}">Contact Us</a></li>
+</ul>
+
+
+
+
+
+<center><h2>Our Guest Rooms</h2></center>
+
+<hr></hr>
+
+
+<div class ="container">
+
+  <form action="{{url_for('booking')}}" method="POST">
+  
+    <p><img src="/static/double_room1.jpg"><h1 class="desc">Double Bed Room 1</h1>
+	<p>A luxurious, comfortable room with sparkling clean bathrooms and posh beds. Make yourself at home with the wide variety of amenities provided for you.</p><br><br>
+    <button name="button" value="1">Book</button>
+    </p>
+</div>
+
+
+<div class ="container">
+  
+    <p><img src="/static/double_room2.jpg"><h1 class="desc">Double Bed Room 2</h1>
+	  <p>Provides a scenic view of the city buildings and the sea though intricately designed windows. Enjoy the view as you sit back and relax in your comfy armchair.</p><br><br>
+      <button name="button" value="2">Book</button>
+    </p>
+
+</div>
+
+
+
+<div class ="container">
+  
+    <p><img src="/static/double_room3.jpg"><h1 class="desc">Double Bed Room 3</h1>
+	  <p>Fancy a shadier roof? This room will do just the trick by providing great shielding from the sky with its smaller windows. Nothing can be more indoors than this.</p><br><br>
+      <button name="button" value="3">Book</button>
+    </p>
+
+</div></form>
+

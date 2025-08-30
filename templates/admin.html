@@ -1,0 +1,138 @@
+<html>
+
+
+<style>
+
+body {
+	font-family: 'Times New Roman', serif;
+	background-image: url('/static/revertigo_wallpaper.jpg');
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;	
+	font-size: 20px;
+}
+
+
+h2 {
+	color:white;
+}
+
+
+
+
+ul {
+  list-style-type: none;
+  margin: 60px 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #C7BBBB;
+  cursor: pointer;
+}
+
+li {
+  float: left;
+}
+
+li.b {
+  float: right;
+}
+	
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 30px 40px;
+  transition: all 1s ease;
+  text-decoration: none;
+
+}
+
+li a:hover {
+    color:white;
+    transition: all 1s ease;
+}
+
+
+
+
+
+.container {
+	border-radius: 5px;
+	border: 3px solid grey;
+    background-color: white;
+    padding: 10px 50px 50px;
+	width: 60%;
+}
+
+
+
+select {
+	width: 200px;
+	height: 50px;
+	font-size:20px;
+	border: 5px solid #9670d4;
+}
+
+
+
+
+input[type=submit] {
+	width: 200px;
+	height: 50px;
+	border-color: black;
+	background-color: #9670d4;
+	font-family: 'Times New Roman', serif;
+	font-size: 20px;
+	border: none;
+}
+
+
+
+input[type=submit]:hover {
+	background-color: white;
+	
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+
+
+<body>
+
+
+<ul>
+  <li class="b"><a href="{{url_for('home')}}">Logout</a></li>
+</ul>
+
+
+<center><form action="{{url_for('view_table')}}" method="post">
+<center><select name="tables" id="tables" required>
+    <option value="" disabled selected>Select Table</option>
+	<option value="customer">Customer</option>
+	<option value="room">Room</option>
+	<option value="booking">Booking</option>
+	<option value="feedback">Feedback</option>
+</select></center>
+<br>
+
+<center><input type="submit"></center>
+</form></center>
+
+
+
+
+
+
+
+
+
+</body>

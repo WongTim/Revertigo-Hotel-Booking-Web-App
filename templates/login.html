@@ -1,0 +1,156 @@
+<html>
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 33.33%;
+  padding: 1px;
+}
+
+
+body {
+	font-family: 'Times New Roman', serif;
+	background-image: url('/static/revertigo_wallpaper.jpg');
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;	
+	font-size: 20px;
+}
+
+
+
+ul {
+  list-style-type: none;
+  margin: 60px 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #C7BBBB;
+  cursor: pointer;
+}
+
+li {
+  float: left;
+}
+
+li.b {
+  float: right;
+}
+	
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 30px 40px;
+  transition: all 1s ease;
+  text-decoration: none;
+
+}
+
+li a:hover {
+    color:white;
+    transition: all 1s ease;
+}
+
+
+
+
+
+.container {
+	border-radius: 5px;
+	border: 3px solid #9670d4;
+    background-color: #ede4ed;
+    padding: 10px 50px 50px;
+	width: 60%;
+	height: 60%;
+}
+
+
+
+input[type=text], input[type=password] {
+	width: 300px;
+	height: 35px;
+	border: 2px solid #9670d4;
+	font-size: 18px;
+}
+
+
+
+
+input[type=submit] {
+	width: 200px;
+	height: 50px;
+	border-color: black;
+	background-color: Green;
+	font-family: 'Times New Roman', serif;
+	font-size: 20px;
+	float:left;
+}
+
+
+
+input[type=submit]:hover {
+	background-color: white;
+	
+}
+
+
+.left, label {float:left;}
+
+
+.red {color:red;}
+
+
+
+</style>
+</head>
+
+
+
+<body>
+
+
+<ul>
+  <li><a href="{{url_for('home')}}">Home</a></li>
+  <li><a href="{{url_for('rooms')}}">Rooms</a></li>
+  <li class="b"><a href="{{url_for('contact')}}">Contact Us</a></li>
+  <li class="b"><a href="{{url_for('login')}}">Login</a></li>
+</ul>
+
+
+
+
+<center><div class="container">
+
+  <h2 class="left">Login</h2><br><br><br><br>
+
+  <form action="{{url_for('admin')}}" method="post">
+  <div class="left">
+  <label for="username">Username</label><br>
+  <input type="text" name="username" id="username" placeholder="Username" required>
+  </div><br><br><br>
+  
+  <div class="left">
+  <label for="password">Password</label><br>
+  <input type="password" name="password" id="password" placeholder="Password" required><br>
+  <label for "password" class="red">{{msg}}</label>
+  </div><br><br><br><br><br>
+  
+  <input type="submit" value="Log in"><br><br>
+  </form>
+
+</div></center>
+
+
+
+
+</body>
